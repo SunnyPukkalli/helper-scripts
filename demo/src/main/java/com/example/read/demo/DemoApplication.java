@@ -34,7 +34,7 @@ public class DemoApplication {
 	private static Logger logger = LoggerFactory.getLogger(DemoApplication.class);
 
 	@EventListener(ApplicationReadyEvent.class)
-	public void read() throws IOException {
+	public void read() throws IOException, InterruptedException {
 
         readValues();
         logger.info("SAFE-000002 : Starting Safe Bootstrapping...");
@@ -52,6 +52,11 @@ public class DemoApplication {
 
         logger.info("SAFE-000005 : All Files Deleted.. ");
 
+        logger.info("Sleeping...");
+        Thread.sleep(10000);
+
+        logger.info("Sleep completed");
+
 	}
 
     private void readValues() throws IOException {
@@ -68,7 +73,7 @@ public class DemoApplication {
                 args.setBasePath(new String(Files.readAllBytes(Paths.get(BASE_PATH))).trim());
                 args.setUserName(new String(Files.readAllBytes(Paths.get(USERNAME))).trim());
                 args.setPwd(new String(Files.readAllBytes(Paths.get(PWD))).trim());
-                args.setEnvName(System.getProperty("ENV_NAME").trim());
+                //args.setEnvName(System.getProperty("ENV_NAME").trim());
 
 
                 logger.info("SAFE-000001 : All properties are read .." +args.toString());
