@@ -24,7 +24,7 @@ public class DemoApplication {
     private static final String USERNAME=SAFE_PATH+"userName";
     private static final String PWD=SAFE_PATH+"pwd";
 
-    //CustomArgument args;
+    CustomArgument args;
 
 
 	public static void main(String[] args) {
@@ -32,10 +32,9 @@ public class DemoApplication {
 	}
 
 	private static Logger logger = LoggerFactory.getLogger(DemoApplication.class);
-/*
+
 	@EventListener(ApplicationReadyEvent.class)
 	public void read() throws IOException, InterruptedException {
-	Thread.sleep(1000000);
         readValues();
         logger.info("SAFE-000002 : Starting Safe Bootstrapping...");
 
@@ -43,7 +42,7 @@ public class DemoApplication {
 
         logger.info("SAFE-000003 : Safe Bootstrapping completed");
 
-
+/*
         logger.info("SAFE-000004 : Now Deleting all files in "+SAFE_PATH);
         Files.walk(Paths.get(SAFE_PATH))
                 .filter(Files::isRegularFile)
@@ -51,17 +50,14 @@ public class DemoApplication {
                 .forEach(File::delete);
 
         logger.info("SAFE-000005 : All Files Deleted.. ");
-
-        logger.info("Sleeping...");
-        Thread.sleep(10000);
-
-        logger.info("Sleep completed");
+        */
 
 	}
-*/
-/*
+
+
     private void readValues() throws IOException {
-        if(!Files.exists(Paths.get(SAFE_PATH))){
+
+	    if(!Files.exists(Paths.get(SAFE_PATH))){
             logger.error("SAFE-ERROR-1 : "+SAFE_PATH+" does not exist");
             throw new RuntimeException(SAFE_PATH+" Path does not exist");
         }else{
@@ -82,12 +78,11 @@ public class DemoApplication {
     }
 
 }
-*/
-/*
+
     public DemoApplication() {
         args = new CustomArgument();
 
     }
-*/
+
 
 }

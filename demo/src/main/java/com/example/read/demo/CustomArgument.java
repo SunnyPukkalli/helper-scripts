@@ -63,4 +63,15 @@ public class CustomArgument {
 
     public CustomArgument() {
     }
+
+    @Override
+    public String toString() {
+        return "CustomArgument{" +
+                "url='" + url + '\'' +
+                ", basePath='" + basePath + '\'' +
+                ", userName='" + userName + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", envName='" + envName + '\'' +
+                '}';
+    }
 }
