@@ -24,7 +24,7 @@ public class DemoApplication {
     private static final String USERNAME=SAFE_PATH+"userName";
     private static final String PWD=SAFE_PATH+"pwd";
 
-    CustomArgument args;
+    //CustomArgument args;
 
 
 	public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class DemoApplication {
 	}
 
 	private static Logger logger = LoggerFactory.getLogger(DemoApplication.class);
-
+/*
 	@EventListener(ApplicationReadyEvent.class)
 	public void read() throws IOException, InterruptedException {
 	Thread.sleep(1000000);
@@ -58,7 +58,8 @@ public class DemoApplication {
         logger.info("Sleep completed");
 
 	}
-
+*/
+/*
     private void readValues() throws IOException {
         if(!Files.exists(Paths.get(SAFE_PATH))){
             logger.error("SAFE-ERROR-1 : "+SAFE_PATH+" does not exist");
@@ -81,11 +82,12 @@ public class DemoApplication {
     }
 
 }
-
+*/
+/*
     public DemoApplication() {
         args = new CustomArgument();
 
     }
-
+*/
 
 }
