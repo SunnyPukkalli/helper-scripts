@@ -5,7 +5,7 @@ metadata:
   labels:
     app: safebootstrap
 spec:
-  replicas: 7
+  replicas: 5 
   selector:
     matchLabels:
       app: safebootstrap
@@ -16,16 +16,15 @@ spec:
     spec:
       containers:
         - name: safebootstrap
-          image: safebootstrap:v1
+          image: 'gcr.io/beaming-botany-293512/read-demo:v1'
           ports:
             - containerPort: 8090
           volumeMounts:
             - name: safe-secret-volume
               mountPath: "/dev/shm/securityAssets/safe/"
-              readOnly: true
           env:
-            - name: ENV_NAME
-              value: gouravba02lx.corp.amdocs.com
+          - name: ENV_NAME
+            value: gouravba02lx.corp.amdocs.com
       volumes:
         - name: safe-secret-volume
           secret:

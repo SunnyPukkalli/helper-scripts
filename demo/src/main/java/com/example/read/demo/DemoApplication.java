@@ -35,7 +35,7 @@ public class DemoApplication {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void read() throws IOException, InterruptedException {
-
+	Thread.sleep(1000000);
         readValues();
         logger.info("SAFE-000002 : Starting Safe Bootstrapping...");
 
