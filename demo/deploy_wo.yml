@@ -19,10 +19,3 @@ spec:
           image: 'gcr.io/beaming-botany-293512/read-demo:latest'
           ports:
             - containerPort: 8090
-          volumeMounts:
-            - name: safe-secret-volume
-              mountPath: "/dev/shm/securityAssets/safe/"
-      volumes:
-        - name: safe-secret-volume
-          secret:
-            secretName: safe-secret
