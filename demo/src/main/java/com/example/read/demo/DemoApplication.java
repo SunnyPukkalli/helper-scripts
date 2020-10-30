@@ -59,12 +59,12 @@ public class DemoApplication {
 
 	    if(!Files.exists(Paths.get(SAFE_PATH))){
             logger.error("SAFE-ERROR-1 : "+SAFE_PATH+" does not exist");
-            throw new RuntimeException(SAFE_PATH+" Path does not exist");
+            //throw new RuntimeException(SAFE_PATH+" Path does not exist");
         }else{
             if( !Files.exists(Paths.get(URL)) || !Files.exists(Paths.get(BASE_PATH)) ||
                     !Files.exists(Paths.get(USERNAME)) || !Files.exists(Paths.get(PWD)) ){
                 logger.error("SAFE-ERROR-2 : All the required Files are not present in "+SAFE_PATH);
-                throw new RuntimeException("All the required Files are not present in "+SAFE_PATH);
+                //throw new RuntimeException("All the required Files are not present in "+SAFE_PATH);
             } else {
                 args.setUrl(new String(Files.readAllBytes(Paths.get(URL))).trim());
                 args.setBasePath(new String(Files.readAllBytes(Paths.get(BASE_PATH))).trim());
